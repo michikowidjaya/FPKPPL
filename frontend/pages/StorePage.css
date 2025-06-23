@@ -1,0 +1,83 @@
+/* File: frontend/src/App.css */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; -- kita hapus agar konten mulai dari atas */
+  padding-top: 40px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Style BARU untuk keranjang */
+.cart-summary {
+  background-color: #1a1d23;
+  border: 1px solid #61dafb;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #444a57;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card button {
+  background-color: #61dafb;
+  border: none;
+  color: #282c34;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-card button:hover {
+  background-color: #ffffff;
+}
+
+/* ... (tambahkan di bagian paling bawah src/App.css) ... */
+
+.checkout-button {
+  background-color: #f0ad4e;
+  border: none;
+  color: #282c34;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.checkout-button:hover {
+  background-color: #eea236;
+}
