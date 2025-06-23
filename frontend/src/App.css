@@ -1,0 +1,531 @@
+/* File: frontend/src/App.css (Versi Baru dengan Palet Terang) */
+
+/* LANGKAH 1: Definisikan Palet Warna Utama yang Baru (Tema Terang) */
+:root {
+  --primary-color: #8D6E63;      /* Cokelat Latte - Untuk Tombol & Aksen Utama */
+  --base-bg: #FCFBF8;           /* Latar Belakang Utama - Putih Krem */
+  --card-bg: #FFFFFF;           /* Latar Belakang Kartu/Form - Putih Bersih */
+  --text-primary: #4E342E;       /* Warna Teks Utama - Cokelat Sangat Tua */
+  --text-secondary: #795548;    /* Warna Teks Sekunder - Cokelat Sedang */
+  --accent-logout: #D87A5B;     /* Warna Tombol Logout - Oranye Koral */
+  --subtle-border: #E0E0E0;     /* Warna Garis / Border yang Halus */
+}
+
+/* LANGKAH 2: Terapkan Warna Dasar ke Seluruh Aplikasi */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--base-bg);
+  color: var(--text-primary);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* --- Navigasi Utama --- */
+.main-nav {
+  background-color: var(--card-bg);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--subtle-border); /* Garis bawah untuk memisahkan dari konten */
+}
+
+.main-nav .nav-brand span {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.main-nav .nav-links a {
+  color: var(--text-secondary);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.main-nav .nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.main-nav .search-bar {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--subtle-border);
+  background-color: #f5f5f5; /* Warna sedikit abu-abu agar berbeda */
+  color: var(--text-primary);
+  font-size: 16px;
+  width: 200px;
+}
+
+.main-nav .search-bar::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Tombol Logout di Navigasi */
+.nav-logout-btn {
+  background-color: var(--accent-logout);
+  color: white; /* Teks putih agar kontras */
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-logout-btn:hover {
+  filter: brightness(110%);
+}
+
+
+/* --- Header & Layout Umum --- */
+.App-header {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  font-size: calc(10px + 2vmin);
+  color: var(--text-primary);
+  background-color: var(--base-bg);
+}
+
+
+/* --- Keranjang Belanja --- */
+.cart-summary {
+  background-color: #F7F5F2; /* Warna krem yang sedikit berbeda untuk keranjang */
+  border: 1px solid var(--subtle-border);
+  border-radius: 8px;
+  padding: 15px 25px;
+  margin-bottom: 30px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan lebih halus */
+  text-align: left;
+}
+
+.cart-summary h3 {
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid var(--subtle-border);
+  padding-bottom: 10px;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.cart-summary ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--subtle-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+.cart-summary ul li span:first-child {
+  color: var(--text-primary);
+}
+
+.cart-summary ul li:last-child { border-bottom: none; }
+
+.cart-summary ul li.cart-total {
+  font-size: 18px;
+  margin-top: 10px;
+  border-top: 2px solid var(--primary-color);
+  padding-top: 10px;
+  color: var(--text-primary);
+}
+
+.checkout-button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 17px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.checkout-button:hover {
+  filter: brightness(110%);
+}
+
+
+/* --- Daftar Produk --- */
+h2 {
+  font-size: 28px;
+  color: var(--text-primary);
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border: 1px solid var(--subtle-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  color: var(--text-primary);
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.product-card p:last-of-type { margin-bottom: 20px; }
+
+.product-card button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-card button:hover {
+  filter: brightness(110%);
+  transform: translateY(-2px);
+}
+
+
+/* --- Lain-lain (Loading, Notifikasi, Logo Auth) --- */
+.loading-indicator {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin: 50px auto;
+}
+
+.notification {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s forwards;
+  text-align: center;
+}
+.notification.info { background-color: #2196F3; }
+.notification.success { background-color: #4CAF50; }
+.notification.warning { background-color: #ff9800; }
+.notification.error { background-color: #f44336; }
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+.auth-logo {
+  display: block;
+  width: 125px;
+  height: auto;
+  margin: 0 auto 20px;
+  object-fit: cover;
+}
+
+/* Tambahkan ini di App.css */
+
+/* Styling untuk item di dalam keranjang */
+.cart-summary ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Memberi jarak antar elemen */
+}
+
+.cart-item-name {
+  flex-grow: 1; /* Biarkan nama item memakan sisa ruang */
+  text-align: left;
+}
+
+.cart-item-price {
+  min-width: 90px; /* Beri lebar minimum agar rata */
+  text-align: right;
+}
+
+/* Styling untuk kontrol kuantitas */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%; /* Membuat tombol menjadi bulat */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1; /* Menyelaraskan teks '-' dan '+' secara vertikal */
+}
+
+.quantity-controls button:hover {
+  filter: brightness(120%);
+}
+
+.quantity-controls span {
+  font-weight: bold;
+  font-size: 18px;
+  min-width: 20px; /* Beri sedikit ruang agar tidak mepet */
+  text-align: center;
+}
+
+/* --- STYLING UNTUK KOMPONEN CHATBOT --- */
+
+.chatbot-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color); /* Menggunakan warna dari tema Anda */
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1000;
+}
+
+.chatbot-toggle-button:hover {
+  transform: scale(1.1);
+  filter: brightness(110%);
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 90vw;
+  max-width: 370px;
+  height: 70vh;
+  max-height: 600px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--subtle-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.chat-window.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.chat-header {
+  flex-shrink: 0;
+  background-color: var(--text-primary); /* Warna header cokelat tua */
+  color: var(--card-bg); /* Teks putih */
+  padding: 16px;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header .chat-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--card-bg);
+  margin: 0;
+}
+
+.chat-header .chat-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.chat-header .chat-close-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.chat-header .chat-close-button:hover {
+  opacity: 1;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #F7F5F2; /* Warna latar chat krem halus */
+}
+
+.message-wrapper {
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.message-wrapper.user {
+  justify-content: flex-end;
+}
+
+.message-wrapper.ai {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message-wrapper.user .message-bubble {
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-wrapper.ai .message-bubble {
+  background-color: #E7E5E4; /* Warna abu-abu untuk bubble AI */
+  color: var(--text-primary);
+  border-bottom-left-radius: 4px;
+}
+
+.loading-bubble {
+  width: 50px;
+  text-align: center;
+}
+
+.chat-input-area {
+  flex-shrink: 0;
+  padding: 12px;
+  border-top: 1px solid var(--subtle-border);
+  background-color: var(--card-bg);
+}
+
+.chat-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--subtle-border);
+  border-radius: 9999px; /* rounded-full */
+  background-color: #f9fafb;
+}
+
+.chat-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(141, 110, 99, 0.2);
+}
+
+.chat-send-button {
+  background-color: var(--text-primary);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-send-button:hover {
+  background-color: var(--primary-color);
+}

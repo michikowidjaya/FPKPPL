@@ -1,0 +1,110 @@
+/* File: frontend/src/AuthPage.css (Versi Baru dengan Palet Terang) */
+
+.auth-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--base-bg); /* Latar belakang putih krem */
+  color: var(--text-primary);      /* Teks utama cokelat tua */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.auth-form-container {
+  background-color: var(--card-bg); /* Latar belakang form putih bersih */
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--subtle-border); /* Tambahkan border halus */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus */
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.auth-form-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Logo di halaman auth sudah diatur oleh .auth-logo di App.css, jadi tidak perlu di sini */
+
+.auth-form-container h2 {
+  font-size: 2.5em;
+  color: var(--text-primary); /* Warna judul cokelat tua */
+  margin-bottom: 10px;
+}
+
+.auth-form-container p {
+  font-size: 1.1em;
+  color: var(--text-secondary); /* Warna deskripsi cokelat sedang */
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-primary);
+  font-size: 0.95em;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+  width: calc(100% - 24px);
+  padding: 12px;
+  border: 1px solid var(--subtle-border);
+  border-radius: 8px;
+  background-color: #f5f5f5; /* Background input abu-abu sangat muda */
+  color: var(--text-primary);
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color); /* Border menjadi cokelat saat fokus */
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2); /* Bayangan cokelat transparan */
+}
+
+.auth-button {
+  background-color: var(--primary-color); /* Tombol utama warna cokelat */
+  color: white; /* Teks tombol putih agar kontras */
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-button:hover {
+  filter: brightness(110%);
+  transform: translateY(-2px);
+}
+
+/* Warna untuk pesan error dan sukses dibiarkan standar (merah & hijau) 
+   karena merupakan standar UX yang mudah dikenali pengguna. */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.success-message {
+  color: #4CAF50;
+  font-size: 0.9em;
+  margin-top: -10px;
+}
